@@ -24,6 +24,12 @@
   position: relative;
 }
 
+@media (min-width: 1024px) {
+  .header {
+    padding: 0.5em;
+  }
+}
+
 .header__button {
   width: 100px;
   font-size: 14px;
@@ -42,6 +48,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0.1em 0.5em;
+  cursor: pointer;
 }
 
 .header__logo {
@@ -69,6 +76,7 @@
   .header__socialIcon::before {
     content: "Dołącz do nas na facebook'u";
     color: #fff;
+    margin-right: 0.5em;
   }
 }
 
@@ -242,7 +250,6 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  cursor: pointer;
 }
 
 .popUp:before {
@@ -267,6 +274,16 @@
   position: absolute;
   top: -14px;
   left: 25px;
+}
+
+@media (min-width: 768px) {
+  .popUp {
+    width: 30%;
+    left: 0;
+    -webkit-transform: none;
+            transform: none;
+    margin-left: 0.5em;
+  }
 }
 
 .popUp--active {
@@ -303,6 +320,11 @@
 .popUp__list__element {
   margin: 0.5em 0;
   font-size: 0.9em;
+}
+
+.popUp__or {
+  width: 100%;
+  height: 20px;
 }
 
 .popUp__contact {
