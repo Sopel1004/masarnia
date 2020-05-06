@@ -1,0 +1,40 @@
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1em;
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &__list{
+        width: 100%;
+        padding: 0.25em 0.75em;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        @media (min-width: 1024px){
+            justify-content: center;
+            
+        }
+
+        &__element{
+            color: #7a7a7a;
+            font-size: 1.5em;
+            margin-right: 2.5em;
+            letter-spacing: 0.05em;
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            &--active{
+                color: #505050;
+                font-weight: 700;
+            }
+        }
+    }
+}

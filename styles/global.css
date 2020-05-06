@@ -1,10 +1,221 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-body, html {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  width: 100%;
+  background-color: #C71628;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em 0.25em;
+  position: relative;
+}
+
+.header__button {
+  width: 100px;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 2em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.1em 0.5em;
+}
+
+.header__logo {
+  width: 128px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.header__socialIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .header__socialIcon::before {
+    content: "Dołącz do nas na facebook'u";
+    color: #fff;
+  }
+}
+
+.nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.nav__list {
+  width: 100%;
+  padding: 0.25em 0.75em;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (min-width: 1024px) {
+  .nav__list {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.nav__list__element {
+  color: #7a7a7a;
+  font-size: 1.5em;
+  margin-right: 2.5em;
+  letter-spacing: 0.05em;
+}
+
+.nav__list__element:last-child {
+  margin-right: 0;
+}
+
+.nav__list__element--active {
+  color: #505050;
+  font-weight: 700;
+}
+
+.main {
+  width: 100%;
+  padding: 0.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main__container {
+  width: 100%;
+  padding: 0.25em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.5em;
+}
+
+.main__container--recommended {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+@media (min-width: 768px) {
+  .main__container--recommended {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main__container--recommended {
+    width: 60%;
+  }
+}
+
+.card {
+  width: 100%;
+  padding: 0 0.25em 0.5em 0.25em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "image image" "name name" "price more";
+  color: #505050;
+  border: 1px solid #dddddd;
+}
+
+.card__image {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: image;
+  width: 100%;
+}
+
+.card__name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: name;
+  font-size: 1.25em;
+  font-weight: 500;
+  margin: 0.25em 0;
+}
+
+.card__price {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: price;
+}
+
+.card__more {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: more;
+  -ms-grid-column-align: self-end;
+      justify-self: self-end;
+  color: #C71628;
+  padding: 0 0.25em;
 }
 /*# sourceMappingURL=global.css.map */
