@@ -140,6 +140,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 .main__container {
@@ -217,5 +218,122 @@
       justify-self: self-end;
   color: #C71628;
   padding: 0 0.25em;
+}
+
+.popUp {
+  width: 96%;
+  padding: 1em 0.5em;
+  position: absolute;
+  top: -2%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  color: #505050;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.popUp:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #dddddd;
+  position: absolute;
+  top: -15px;
+  left: 25px;
+}
+
+.popUp:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #fff;
+  position: absolute;
+  top: -14px;
+  left: 25px;
+}
+
+.popUp--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.popUp__option {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.25em;
+  margin: 0.5em 0;
+}
+
+.popUp__text {
+  margin-left: 0.5em;
+}
+
+.popUp__list {
+  width: 90%;
+  list-style: url("../images/chevron-right.svg");
+  margin-bottom: 0.5em;
+}
+
+.popUp__list__element {
+  margin: 0.5em 0;
+  font-size: 0.9em;
+}
+
+.popUp__contact {
+  width: 100%;
+  height: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.popUp__contact__info {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popUp__contact__info:first-child {
+  border-right: 1px solid #cacaca;
+}
+
+.popUp__contactText {
+  font-size: 0.9em;
+  margin-left: 0.2em;
 }
 /*# sourceMappingURL=global.css.map */
