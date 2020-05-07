@@ -1,18 +1,24 @@
 .main{
     width: 100%;
+    height: calc(100vh - 110px);
     padding: 0.25em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
+    overflow-y: scroll;
 
     &__filterBar{
         width: 100%;
-        display: flex;
+        display: none;
         justify-content: start;
         align-items: center;
         padding: 0.25em 0.5em;
+
+        &--active{
+            display: flex;
+        }
 
         &__filters{
             flex-grow: 2;
@@ -22,6 +28,7 @@
                 width: fit-content;
                 padding: 0.25em 0.5em;
                 background-color: #dddddd;
+                color: #505050;
                 border-radius: 1em;
                 font-size: 0.75em;
             }
@@ -37,10 +44,18 @@
         width: 100%;
         padding: 0.25em;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr;
         gap: 0.5em;
 
-        &--recommended{
+        @media (min-width: 768px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (min-width: 1024px){
+            width: 60%;
+        }
+
+        &--all{
             
             grid-template-columns: 1fr;
             gap: 0.5em;
@@ -50,7 +65,8 @@
             }
 
             @media (min-width: 1024px){
-                width: 60%;
+                width: 100%;
+                grid-template-columns: repeat(4, 1fr);
             }
         }
     }

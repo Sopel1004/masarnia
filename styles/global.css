@@ -10,6 +10,7 @@
 
 .header {
   width: 100%;
+  height: 40px;
   background-color: #C71628;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,6 +83,7 @@
 
 .nav {
   width: 100%;
+  height: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,6 +96,12 @@
   margin-top: 1em;
   overflow-x: scroll;
   scrollbar-width: none;
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    overflow: hidden;
+  }
 }
 
 .nav__list {
@@ -142,6 +150,7 @@
 
 .main {
   width: 100%;
+  height: calc(100vh - 110px);
   padding: 0.25em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,20 +159,19 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  overflow-y: scroll;
 }
 
 .main__filterBar {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
@@ -171,6 +179,12 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 0.25em 0.5em;
+}
+
+.main__filterBar--active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .main__filterBar__filters {
@@ -186,6 +200,7 @@
   width: fit-content;
   padding: 0.25em 0.5em;
   background-color: #dddddd;
+  color: #505050;
   border-radius: 1em;
   font-size: 0.75em;
 }
@@ -200,27 +215,42 @@
   padding: 0.25em;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 0.5em;
-}
-
-.main__container--recommended {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   gap: 0.5em;
 }
 
 @media (min-width: 768px) {
-  .main__container--recommended {
+  .main__container {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
-  .main__container--recommended {
+  .main__container {
     width: 60%;
+  }
+}
+
+.main__container--all {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .main__container--all {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main__container--all {
+    width: 100%;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
 }
 
