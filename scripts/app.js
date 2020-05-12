@@ -18,6 +18,7 @@ let currentPage = 'recommended';
 let appliedFilters = [];
 
 document.addEventListener('DOMContentLoaded', function () {
+  alert(11111);
   loader = document.querySelector('.main__loader');
   filtersDiv = document.querySelector('.filters');
   appliedFiltersDiv = document.querySelector('.main__filterBar__filters');
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
   mainContainer = document.querySelector('.main__container');
 
   btns = document.querySelectorAll('.nav__list__element');
+  console.log(11111);
 
   btns.forEach((el) => {
     el.addEventListener('click', function (e) {
@@ -43,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       if (currentPage !== 'all') {
-        getProducts();
+        getProducts({});
       }
     });
   });
@@ -175,9 +177,13 @@ const generateProducts = (products) => {
 };
 
 const getProducts = (data) => {
-  url = './php/get_products.php';
+  url = '../php/get_products.php';
 
   showLoader();
+
+  console.log(1111);
+
+  console.log(data);
 
   fetch(url, {
     method: 'post',
@@ -194,7 +200,8 @@ const getProducts = (data) => {
       }
     })
     .then((res) => {
-      generateProducts(res);
+      console.log(res);
+      // generateProducts(res);
     })
     .catch((err) => {
       console.log(err);
