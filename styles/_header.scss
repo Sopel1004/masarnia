@@ -1,51 +1,49 @@
-.header{
-    width: 100%;
-    height: 40px;
-    background-color: #C71628;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5em 0.25em;
-    position: relative;
+.header {
+  width: 100%;
+  height: 40px;
+  background-color: #c71628;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 0.25em;
+  position: relative;
 
-    @media (min-width: 1024px){
+  @media (min-width: 1024px) {
     padding: 0.5em;
-    }
+  }
 
-    &__button{
-        width: 100px;
-        font-size: 14px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+  &__button {
+    width: 100px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 2em;
+    box-sizing: border-box;
+    padding: 0.1em 0.5em;
+    cursor: pointer;
+  }
+
+  &__logo {
+    width: 128px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  &__socialIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 1024px) {
+      &::before {
+        content: "Dołącz do nas na facebook'u";
         color: #fff;
-        border: 2px solid #fff;
-        border-radius: 2em;
-        box-sizing: border-box;
-        padding: 0.1em 0.5em;
-        cursor: pointer;
-
+        margin-right: 0.5em;
+      }
     }
-
-    &__logo{
-        width: 128px;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%);
-    }
-
-    &__socialIcon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @media (min-width: 1024px){
-            &::before{
-                content: "Dołącz do nas na facebook'u";
-                color: #fff;
-                margin-right: 0.5em;
-            }
-        }
-        
-    }
+  }
 }

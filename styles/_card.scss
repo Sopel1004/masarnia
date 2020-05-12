@@ -1,36 +1,36 @@
-.card{
+.card {
+  width: 100%;
+  padding: 0 0.25em 0.5em 0.25em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'image image'
+    'name name'
+    'price more';
+  color: #505050;
+  border: 1px solid #dddddd;
+
+  &__image {
+    grid-area: image;
     width: 100%;
-    padding: 0 0.25em 0.5em 0.25em;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "image image"
-    "name name"
-    "price more";
-    color: #505050;
-    border: 1px solid #dddddd;
+  }
 
-    &__image{
-        grid-area: image;
-        width: 100%;
-    }
+  &__name {
+    grid-area: name;
+    font-size: 1.25em;
+    font-weight: 500;
+    margin: 0.25em 0;
+  }
 
-    &__name{
-        grid-area: name;
-        font-size: 1.25em;
-        font-weight: 500;
-        margin: 0.25em 0;
-    }
+  &__price {
+    grid-area: price;
+  }
 
-    &__price{
-        grid-area: price;
-    }
-
-    &__more{
-        grid-area: more;
-        justify-self: self-end;
-        color: #C71628;
-        padding: 0 0.25em;
-    }
+  &__more {
+    grid-area: more;
+    justify-self: self-end;
+    color: #c71628;
+    padding: 0 0.25em;
+  }
 }

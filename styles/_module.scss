@@ -1,0 +1,11 @@
+@mixin flexcenter($hor: true, $ver: true) {
+  display: flex;
+  @if $hor == true and $ver == true {
+    align-items: center;
+    justify-content: center;
+  } @else if $hor == true and $ver == false {
+    justify-content: center;
+  } @else {
+    align-items: center;
+  }
+}

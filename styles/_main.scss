@@ -1,73 +1,119 @@
-.main{
+@import 'module';
+
+.main {
+  width: 100%;
+  height: calc(100vh - 110px);
+  padding: 0.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow-y: scroll;
+  background-color: #fff;
+
+  &__filterBar {
     width: 100%;
-    height: calc(100vh - 110px);
-    padding: 0.25em;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    display: none;
     align-items: center;
-    position: relative;
-    overflow-y: scroll;
+    justify-content: space-between;
+    padding: 0.25em 0.5em;
 
-    &__filterBar{
-        width: 100%;
-        display: none;
-        justify-content: start;
-        align-items: center;
-        padding: 0.25em 0.5em;
-
-        &--active{
-            display: flex;
-        }
-
-        &__filters{
-            flex-grow: 2;
-            overflow-x: auto;
-
-            & .filter{
-                width: fit-content;
-                padding: 0.25em 0.5em;
-                background-color: #dddddd;
-                color: #505050;
-                border-radius: 1em;
-                font-size: 0.75em;
-            }
-        }
-
-        &__icon{
-            width: 32px;
-            height: 32px;
-        }
+    &--active {
+      display: flex;
     }
 
-    &__container{
-        width: 100%;
-        padding: 0.25em;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.5em;
+    &__filters {
+      @include flexcenter($hor: false);
+      min-height: 40px;
+      overflow-x: auto;
+      width: fit-content;
+      max-width: 100vw;
+      padding: 0px 10px;
 
-        @media (min-width: 768px){
-            grid-template-columns: repeat(2, 1fr);
+      & .filter {
+        @include flexcenter();
+        flex-grow: 2;
+        padding: 3px 6px;
+        height: 35px;
+        background-color: var(--grey);
+        color: var(--dark__gray);
+        margin: 0px 5px;
+        border-radius: 10px;
+
+        & > p {
+          font-size: 17px;
+          margin: 0;
+          white-space: nowrap;
         }
 
-        @media (min-width: 1024px){
-            width: 60%;
+        & > button {
+          margin-left: 10px;
+          border: 0;
+          padding: 0;
+          height: 20px;
+          background: transparent;
+          cursor: pointer;
+          @include flexcenter();
         }
 
-        &--all{
-            
-            grid-template-columns: 1fr;
-            gap: 0.5em;
-
-            @media (min-width: 768px){
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            @media (min-width: 1024px){
-                width: 100%;
-                grid-template-columns: repeat(4, 1fr);
-            }
+        & img {
+          width: 11px;
+          height: 100%;
         }
+      }
     }
+
+    &__icon {
+      width: 32px;
+      height: 32px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    padding: 0.25em;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+      width: 60%;
+    }
+
+    &--all {
+      grid-template-columns: 1fr;
+      gap: 0.5em;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 1024px) {
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #dadada;
+    opacity: 0.9;
+    z-index: -1;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 }

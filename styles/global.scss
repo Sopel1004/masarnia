@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
+:root {
+  --font: 'Roboto', sans-serif;
+  font-family: var(--font);
+  --light: #ffffff;
+  --red: #c71628;
+  --btn: #707070;
+  --dark__gray: #505050;
+  --blur: #dadada;
+  --grey: #ededed;
+}
+
+body {
+  background-color: #fff;
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 @import 'header';
@@ -12,3 +26,21 @@
 @import 'main';
 @import 'card';
 @import 'popUp';
+@import 'filters';
+
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: var(--blur);
+  opacity: 0%;
+  transition: opacity 100ms ease-out;
+
+  &--show {
+    z-index: 900;
+    opacity: 90%;
+  }
+}

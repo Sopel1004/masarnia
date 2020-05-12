@@ -1,107 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Masarnia Zawistowski</title>
-    <link rel='stylesheet' href='./styles/global.css'>
-    <link rel="shortcut icon" type="image/png" href='./images/favicon.ico'>
-</head>
-<body>
-    <div class='header'>
-        <div class='header__button'>Zamów <img src='./images/chevron-down.svg' alt='chevron-down' class='header__button__chevron'/></div>
-        <img src='./images/masarnia_logo.png' alt='logo' class='header__logo'/>
-        <div class='header__socialIcon'>
-            <img src='./images/facebook.svg' alt='fb-icon' />
-        </div>
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.ico" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__button">Zamów <img src="./images/chevron-down.svg" alt="chevron-down" class="header__button__chevron" /></div>
+      <img src="./images/masarnia_logo.png" alt="logo" class="header__logo" />
+      <div class="header__socialIcon">
+        <img src="./images/facebook.svg" alt="fb-icon" />
+      </div>
     </div>
-    <nav class='nav'>
-        <ul class='nav__list'>
-            <li class='nav__list__element nav__list__element--active' data-tab-name='recommended'>Polecane</li>
-            <li class='nav__list__element' data-tab-name='new'>Nowe</li>
-            <li class='nav__list__element' data-tab-name='all'>Wszystko</li>
-        </ul>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list__element nav__list__element--active" data-tab-name="recommended">Polecane</li>
+        <li class="nav__list__element" data-tab-name="new">Nowe</li>
+        <li class="nav__list__element" data-tab-name="all">Wszystko</li>
+      </ul>
     </nav>
-    <main class='main'>
-        <div class='main__filterBar'>
-            <div class='main__filterBar__filters'>
-                <div class='filter'>Kategoria</div>
-            </div>
-            <img src='./images/sliders.svg' class='main__filterBar__icon' alt='slider icon' />
+    <main class="main">
+      <div class="main__filterBar">
+        <div class="main__filterBar__filters"></div>
+        <img src="./images/sliders.svg" class="main__filterBar__icon" alt="slider icon" />
+      </div>
+      <section class="main__container">
+        <div class="card">
+          <img src="./images/kielbasa-z-pieca.png" alt="produkt's image" class="card__image" />
+          <span class="card__name">Kiełbasa z pieca</span>
+          <span class="card__price">Cena: 14,99zł</span>
+          <span class="card__more">więcej...</span>
         </div>
-        <section class='main__container'>
-            <div class='card'>
-                <img src='./images/kielbasa-z-pieca.png' alt="produkt's image" class='card__image'/>
-                <span class='card__name'>Kiełbasa z pieca</span>
-                <span class='card__price'>Cena: 14,99zł</span>
-                <span class='card__more'>więcej...</span>
-            </div>
-            <div class='card'>
-                <img src='./images/kielbasa-z-pieca.png' alt="produkt's image" class='card__image'/>
-                <span class='card__name'>Kiełbasa z pieca</span>
-                <span class='card__price'>Cena: 14,99zł</span>
-                <span class='card__more'>więcej...</span>
-            </div>
-            <div class='card'>
-                <img src='./images/kielbasa-z-pieca.png' alt="produkt's image" class='card__image'/>
-                <span class='card__name'>Kiełbasa z pieca</span>
-                <span class='card__price'>Cena: 14,99zł</span>
-                <span class='card__more'>więcej...</span>
-            </div>
-            <div class='card'>
-                <img src='./images/kielbasa-z-pieca.png' alt="produkt's image" class='card__image'/>
-                <span class='card__name'>Kiełbasa z pieca</span>
-                <span class='card__price'>Cena: 14,99zł</span>
-                <span class='card__more'>więcej...</span>
-            </div>
-            <div class='card'>
-                <img src='./images/kielbasa-z-pieca.png' alt="produkt's image" class='card__image'/>
-                <span class='card__name'>Kiełbasa z pieca</span>
-                <span class='card__price'>Cena: 14,99zł</span>
-                <span class='card__more'>więcej...</span>
-            </div>
-        </section>
-        <div class="popUp">
-            <div class='popUp__option'>
-                <img src="./images/shop_icon.svg" alt="shop icon" class='popUp__icon'/>
-                <span class='popUp__text'>z odbiorem w wybranym sklepie:</span>
-            </div>
-            <ul class='popUp__list'>
-                <li class='popUp__list__element'>Sklep Galeria Wędlin na targowisku Bartodzieje<br/>
-                    574 75 16 75
-                </li>    
-                <li class='popUp__list__element'>Sklep Galeria Wędlin ul.Wojska Polskiego<br/>
-                    574 75 15 95
-                </li>    
-                <li class='popUp__list__element'>Sklep Galeria Wędlin Łochowo<br/>
-                    574 752 482
-                </li>    
-                <li class='popUp__list__element'>Sklep Galeria Wędlin Białe Błota<br/>
-                    574 759 795
-                </li>    
-                <li class='popUp__list__element'>Sklep firmowy przy masarni:<br/>
-                    606 24 76 74 lub 52 3845 845
-                </li>    
-            </ul>
-            <img src='./images/separate.svg' alt='or' class='popUp__or'/>
-            <div class='popUp__option'>
-                <img src="images/cil_truck.svg" alt="truck icon" class='popUp__icon'/>
-                <span class='popUp__text'>z dostawą do domu:</span>
-            </div>
-            <div class='popUp__contact'>
-                <div class='popUp__contact__info'>
-                    <img src="images/mail_icon.svg" alt="mail icon" class='popUp__icon'/>
-                    <span class='popUp__contactText'>handel@podroby.pl</span>
-                </div>
-                <div class='popUp__contact__info'>
-                    <img src="images/phone_icon.svg" alt="phone icon" class='popUp__icon'/>
-                    <span class='popUp__contactText'>52 3845 845</span>
-                </div>
-            </div>
-            
-        </div>
+      </section>
+      <div class="main__loader">
+        <svg
+          version="1.1"
+          id="loader-1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          width="60px"
+          height="60px"
+          viewBox="0 0 40 40"
+          enable-background="new 0 0 40 40"
+          xml:space="preserve"
+        >
+          <path
+            opacity="0.2"
+            fill="#000"
+            d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+            s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+            c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
+          />
+          <path
+            fill="#000"
+            d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+            C22.32,8.481,24.301,9.057,26.013,10.047z"
+          >
+            <animateTransform
+              attributeType="xml"
+              attributeName="transform"
+              type="rotate"
+              from="0 20 20"
+              to="360 20 20"
+              dur="0.5s"
+              repeatCount="indefinite"
+            />
+          </path>
+        </svg>
+      </div>
     </main>
-    <script src='./scripts/showPopUp.js'></script>
-    <script src='./scripts/changeTabs.js'></script>
-</body>
+    <div class="filters">
+      <div class="filters__back">
+        <img src="./images/arrow.svg" alt="arrow" class="back__icon" />
+        <!-- BUTTON!!!!!!!!!!!!!!!!!!!!!!-->
+      </div>
+      <div class="filters__wrapper">
+        <div class="filters__type">
+          <h2 class="filters__title">Sortuj</h2>
+          <div class="wrapper">
+            <div class="filters__item">
+              <input type="radio" value="cenaProduktu,desc" id="sort__item--1" class="item sort__item" name="sort__item" />
+              <label class="item__title" for="sort__item--1">Cena: malejąco</label>
+            </div>
+            <div class="filters__item">
+              <input type="radio" value="cenaProduktu,asc" id="sort__item--2" class="item sort__item" name="sort__item" />
+              <label class="item__title" for="sort__item--2">Cena: rosnąco</label>
+            </div>
+            <div class="filters__item">
+              <input type="radio" value="nazwaProduktu,desc" id="sort__item--3" class="item sort__item" name="sort__item" />
+              <label class="item__title" for="sort__item--3">Nazwa: malejąco</label>
+            </div>
+            <div class="filters__item">
+              <input type="radio" value="nazwaProduktu,asc" id="sort__item--4" class="item sort__item" name="sort__item" />
+              <label class="item__title" for="sort__item--4">Nazwa: rosnąco</label>
+            </div>
+          </div>
+        </div>
+        <div class="filters__type">
+          <h2 class="filters__title">Kategoria</h2>
+          <div class="wrapper">
+            <div class="filters__item">
+              <input type="checkbox" value="1" id="filter__item--1" class="item filter__item" name="filter__item" />
+              <label class="item__title" for="filter__item--1">szynki i polędwice</label>
+            </div>
+            <div class="filters__item">
+              <input type="checkbox" value="2" id="filter__item--2" class="item filter__item" name="filter__item" />
+              <label class="item__title" for="filter__item--2">wędzonki i kiełbasy surowe </label>
+            </div>
+            <div class="filters__item">
+              <input type="checkbox" value="3" id="filter__item--3" class="item filter__item" name="filter__item" />
+              <label class="item__title" for="filter__item--3">boczki</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="filters__btn">
+        <button class="filters__apply">Zastosuj</button>
+      </div>
+    </div>
+    <div class="popUp">
+      <div class="popUp__option">
+        <img src="./images/shop_icon.svg" alt="shop icon" class="popUp__icon" />
+        <span class="popUp__text">z odbiorem w wybranym sklepie:</span>
+      </div>
+      <ul class="popUp__list">
+        <li class="popUp__list__element">
+          Sklep Galeria Wędlin na targowisku Bartodzieje<br />
+          574 75 16 75
+        </li>
+        <li class="popUp__list__element">
+          Sklep Galeria Wędlin ul.Wojska Polskiego<br />
+          574 75 15 95
+        </li>
+        <li class="popUp__list__element">
+          Sklep Galeria Wędlin Łochowo<br />
+          574 752 482
+        </li>
+        <li class="popUp__list__element">
+          Sklep Galeria Wędlin Białe Błota<br />
+          574 759 795
+        </li>
+        <li class="popUp__list__element">
+          Sklep firmowy przy masarni:<br />
+          606 24 76 74 lub 52 3845 845
+        </li>
+      </ul>
+      <img src="./images/separate.svg" alt="or" class="popUp__or" />
+      <div class="popUp__option">
+        <img src="./images/cil_truck.svg" alt="truck icon" class="popUp__icon" />
+        <span class="popUp__text">z dostawą do domu:</span>
+      </div>
+      <div class="popUp__contact">
+        <div class="popUp__contact__info">
+          <img src="./images/mail_icon.svg" alt="mail icon" class="popUp__icon" />
+          <span class="popUp__contactText">handel@podroby.pl</span>
+        </div>
+        <div class="popUp__contact__info">
+          <img src="./images/phone_icon.svg" alt="phone icon" class="popUp__icon" />
+          <span class="popUp__contactText">52 3845 845</span>
+        </div>
+      </div>
+    </div>
+    <div class="blur"></div>
+    <script src="./scripts/showPopUp.js"></script>
+    <!-- <script src="./scripts/changeTabs.js"></script> -->
+    <script src="./scripts/app.js"></script>
+  </body>
 </html>
+>>>>>>> Stashed changes
