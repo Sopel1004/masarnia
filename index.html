@@ -74,55 +74,6 @@
         </svg>
       </div>
     </main>
-    <div class="filters">
-      <div class="filters__back">
-        <img src="./images/arrow.svg" alt="arrow" class="back__icon" />
-        <!-- BUTTON!!!!!!!!!!!!!!!!!!!!!!-->
-      </div>
-      <div class="filters__wrapper">
-        <div class="filters__type">
-          <h2 class="filters__title">Sortuj</h2>
-          <div class="wrapper">
-            <div class="filters__item">
-              <input type="radio" value="cenaProduktu,desc" id="sort__item--1" class="item sort__item" name="sort__item" />
-              <label class="item__title" for="sort__item--1">Cena: malejąco</label>
-            </div>
-            <div class="filters__item">
-              <input type="radio" value="cenaProduktu,asc" id="sort__item--2" class="item sort__item" name="sort__item" />
-              <label class="item__title" for="sort__item--2">Cena: rosnąco</label>
-            </div>
-            <div class="filters__item">
-              <input type="radio" value="nazwaProduktu,desc" id="sort__item--3" class="item sort__item" name="sort__item" />
-              <label class="item__title" for="sort__item--3">Nazwa: malejąco</label>
-            </div>
-            <div class="filters__item">
-              <input type="radio" value="nazwaProduktu,asc" id="sort__item--4" class="item sort__item" name="sort__item" />
-              <label class="item__title" for="sort__item--4">Nazwa: rosnąco</label>
-            </div>
-          </div>
-        </div>
-        <div class="filters__type">
-          <h2 class="filters__title">Kategoria</h2>
-          <div class="wrapper">
-            <div class="filters__item">
-              <input type="checkbox" value="1" id="filter__item--1" class="item filter__item" name="filter__item" />
-              <label class="item__title" for="filter__item--1">szynki i polędwice</label>
-            </div>
-            <div class="filters__item">
-              <input type="checkbox" value="2" id="filter__item--2" class="item filter__item" name="filter__item" />
-              <label class="item__title" for="filter__item--2">wędzonki i kiełbasy surowe </label>
-            </div>
-            <div class="filters__item">
-              <input type="checkbox" value="3" id="filter__item--3" class="item filter__item" name="filter__item" />
-              <label class="item__title" for="filter__item--3">boczki</label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="filters__btn">
-        <button class="filters__apply">Zastosuj</button>
-      </div>
-    </div>
     <div class="popUp">
       <div class="popUp__option">
         <img src="./images/shop_icon.svg" alt="shop icon" class="popUp__icon" />
@@ -152,23 +103,73 @@
       </ul>
       <img src="./images/separate.svg" alt="or" class="popUp__or" />
       <div class="popUp__option">
-        <img src="./images/cil_truck.svg" alt="truck icon" class="popUp__icon" />
+        <img src="images/cil_truck.svg" alt="truck icon" class="popUp__icon" />
         <span class="popUp__text">z dostawą do domu:</span>
       </div>
       <div class="popUp__contact">
         <div class="popUp__contact__info">
-          <img src="./images/mail_icon.svg" alt="mail icon" class="popUp__icon" />
+          <img src="images/mail_icon.svg" alt="mail icon" class="popUp__icon" />
           <span class="popUp__contactText">handel@podroby.pl</span>
         </div>
         <div class="popUp__contact__info">
-          <img src="./images/phone_icon.svg" alt="phone icon" class="popUp__icon" />
+          <img src="images/phone_icon.svg" alt="phone icon" class="popUp__icon" />
           <span class="popUp__contactText">52 3845 845</span>
         </div>
+      </div>
+    </div>
+    <div class="filters">
+      <div class="filters__back">
+        <img src="./images/arrow.svg" alt="arrow" class="back__icon" />
+        <!-- BUTTON!!!!!!!!!!!!!!!!!!!!!!-->
+      </div>
+      <div class="filters__wrapper">
+        <div class="filters__type">
+          <h2 class="filters__title">Sortuj</h2>
+          <div class="wrapper">
+            <div class="filters__item">
+              <input type="radio" value="cenaProduktu,desc" id="sort__item--1" class="item sort__item" name="sort__item" />
+              <label class="item__title" for="sort__item--1">Cena: malejąco</label>
+            </div>
+            <div class="filters__item">
+              <input type="radio" value="cenaProduktu,asc" id="sort__item--2" class="item sort__item" name="sort__item" />
+              <label class="item__title" for="sort__item--2">Cena: rosnąco</label>
+            </div>
+            <div class="filters__item">
+              <input type="radio" value="nazwaProduktu,desc" id="sort__item--3" class="item sort__item" name="sort__item" />
+              <label class="item__title" for="sort__item--3">Nazwa: malejąco</label>
+            </div>
+            <div class="filters__item">
+              <input type="radio" value="nazwaProduktu,asc" id="sort__item--4" class="item sort__item" name="sort__item" />
+              <label class="item__title" for="sort__item--4">Nazwa: rosnąco</label>
+            </div>
+          </div>
+        </div>
+        <div class="filters__type filters__type--cat">
+          <h2 class="filters__title">Kategoria</h2>
+          <div class="wrapper">
+            <!-- <div class="filters__item">
+              <input type="checkbox" value="1" id="filter__item--1" class="item filter__item" name="filter__item" />
+              <label class="item__title" for="filter__item--1">szynki i polędwice</label>
+            </div>
+            <div class="filters__item">
+              <input type="checkbox" value="2" id="filter__item--2" class="item filter__item" name="filter__item" />
+              <label class="item__title" for="filter__item--2">wędzonki i kiełbasy surowe </label>
+            </div>
+            <div class="filters__item">
+              <input type="checkbox" value="3" id="filter__item--3" class="item filter__item" name="filter__item" />
+              <label class="item__title" for="filter__item--3">boczki</label>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="filters__btn">
+        <button class="filters__apply">Zastosuj</button>
       </div>
     </div>
     <div class="blur"></div>
     <script src="./scripts/showPopUp.js"></script>
     <!-- <script src="/scripts/changeTabs.js"></script> -->
-    <script src="./scripts/app.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/getCategories.js"></script>
   </body>
 </html>

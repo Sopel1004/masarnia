@@ -393,11 +393,7 @@ body {
   width: 96%;
   padding: 1em 0.5em;
   position: absolute;
-<<<<<<< Updated upstream
-  top: -2%;
-=======
-  top: 65px;
->>>>>>> Stashed changes
+  top: 70px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
