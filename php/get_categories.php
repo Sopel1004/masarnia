@@ -5,11 +5,6 @@ $username = "2brhMowid7";
 $password = "sXrXC67iRz";
 $dbname = "2brhMowid7";
 
-// $servername = "localhost";
-// $username = "masarnia_admin";
-// $password = "Ypz0M5y4m";
-// $dbname = "masarnia_produkty";
-
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
