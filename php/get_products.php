@@ -22,11 +22,18 @@ $sql = "SELECT * FROM produkty";
 
 if(is_array($decoded)) {
     if(array_key_exists('category', $decoded) && count($decoded['category']) > 0) {
-        $sql .= ' WHERE ';
+        $sql .= ' WHERE( ';
         for($i = 0; $i < count($decoded['category']); $i++){
             $sql .= ' indeksKategorii='.$decoded['category'][$i];
             if($i != count($decoded['category']) - 1) $sql .= ' OR ';
         }
+        $sql .= ') ';
+    }
+    if(array_key_exists('recommended', $decoded) && $decoded['recommended'] == true){
+        if(!array_key_exists('category', $decoded)) $sql .= ' WHERE ';
+        else if(array_key_exists('category', $decoded)) $sql .= ' AND ';
+        $sql .= ' czyPolecane=1 ';
+
     }
     if(array_key_exists('sort', $decoded) && strlen($decoded['sort']) > 0) $sql .= " ORDER BY ".explode(",",$decoded['sort'])[0]." ".explode(",",$decoded['sort'])[1];
     if(array_key_exists('limit', $decoded)) $sql .= " LIMIT ".$decoded['limit'];
@@ -35,6 +42,7 @@ if(is_array($decoded)) {
 $status = array();
 $data;
 
+// $sql = 'SELECT * FROM produkty WHERE indeksKategorii=1 OR indeksKategorii=5 AND czyPolecane=1';
 // echo $sql;
 
 if($result = $conn->query($sql)){
