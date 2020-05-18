@@ -926,38 +926,48 @@ body {
   opacity: 90%;
 }
 
-::-webkit-scrollbar {
-  background-color: transparent;
-  width: 11px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(199, 22, 40, 0.8);
-  background-clip: padding-box;
-  border-radius: 15px;
-}
-
-::-webkit-scrollbar-thumb:vertical {
-  border: 3px solid rgba(0, 0, 0, 0);
-  border-top: 0;
-  border-bottom: 0;
-}
-
-::-webkit-scrollbar:horizontal {
-  background-color: transparent;
-  height: 11px;
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-  border: 3px solid rgba(0, 0, 0, 0);
-  border-left: 0;
-  border-right: 0;
-}
-
-::-webkit-scrollbar-button {
-  opacity: 0;
-}
-
-::-webkit-scrollbar-track {
-  background-color: transparent;
+@media (min-width: 420px) {
+  .description__desktop::-webkit-scrollbar,
+  .filters::-webkit-scrollbar,
+  .main::-webkit-scrollbar {
+    background-color: transparent;
+    width: 11px;
+  }
+  .description__desktop::-webkit-scrollbar-thumb,
+  .filters::-webkit-scrollbar-thumb,
+  .main::-webkit-scrollbar-thumb {
+    background-color: rgba(199, 22, 40, 0.8);
+    background-clip: padding-box;
+    border-radius: 15px;
+  }
+  .description__desktop::-webkit-scrollbar-thumb:vertical,
+  .filters::-webkit-scrollbar-thumb:vertical,
+  .main::-webkit-scrollbar-thumb:vertical {
+    border: 3px solid rgba(0, 0, 0, 0);
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .description__desktop::-webkit-scrollbar:horizontal,
+  .filters::-webkit-scrollbar:horizontal,
+  .main::-webkit-scrollbar:horizontal {
+    background-color: transparent;
+    height: 11px;
+  }
+  .description__desktop::-webkit-scrollbar-thumb:horizontal,
+  .filters::-webkit-scrollbar-thumb:horizontal,
+  .main::-webkit-scrollbar-thumb:horizontal {
+    border: 3px solid rgba(0, 0, 0, 0);
+    border-left: 0;
+    border-right: 0;
+  }
+  .description__desktop::-webkit-scrollbar-button,
+  .filters::-webkit-scrollbar-button,
+  .main::-webkit-scrollbar-button {
+    opacity: 0;
+  }
+  .description__desktop::-webkit-scrollbar-track,
+  .filters::-webkit-scrollbar-track,
+  .main::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }

@@ -133,6 +133,7 @@ const closeDescription = (e) => {
   document.querySelector('.description__desktop').classList.remove('description__desktop--open');
   document.querySelector('.popUp__description').classList.remove('popUp__description--open');
   popUp__description.classList.remove('popUp__description--open', 'popUp__description--grid');
+  document.querySelector('.open__popUp__sign').classList.remove('open__popUp__sign--open');
   blurDiv.classList.remove('blur--show');
 };
 
