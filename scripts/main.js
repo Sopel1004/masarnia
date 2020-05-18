@@ -13,7 +13,7 @@ const checkedEl = {
 };
 
 //elements
-let loader, filtersDiv, appliedFiltersDiv, blurDiv, btns, mainContainer;
+let loader, filtersDiv, appliedFiltersDiv, blurDiv, btns, mainContainer, divProductsContainer, popUp__description;
 
 let currentPage = 'recommended';
 
@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
   appliedWrapperDiv = document.querySelector('.main__filterBar');
   blurDiv = document.querySelector('.blur');
   mainContainer = document.querySelector('.main__container');
+  divProductsContainer = document.querySelector('.main__container');
+  popUp__description = document.querySelector('.popUp__description');
 
   btns = document.querySelectorAll('.nav__list__element');
 
@@ -64,14 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.filters__apply').addEventListener('click', function () {
     applyFilters();
   });
-
   document.querySelector('.main__filterBar__icon').addEventListener('click', openFilters);
   document.querySelector('.back__icon').addEventListener('click', closeFilters);
-
   document.querySelector('.back__icon--desc').addEventListener('click', closeDescription);
-
   document.querySelector('.open__popUp').addEventListener('click', toggleHowToOrder);
-
   window.addEventListener('resize', closeOnResize);
 
   getProducts({
@@ -133,7 +131,8 @@ const showDescription = (e) => {
 
 const closeDescription = (e) => {
   document.querySelector('.description__desktop').classList.remove('description__desktop--open');
-  document.querySelector('.popUp--description').classList.remove('popUp--description--open');
+  document.querySelector('.popUp__description').classList.remove('popUp__description--open');
+  popUp__description.classList.remove('popUp__description--open', 'popUp__description--grid');
   blurDiv.classList.remove('blur--show');
 };
 
@@ -152,7 +151,19 @@ const findOpenedDesc = () => {
 
 //-------------------------How to order-------------------------
 const toggleHowToOrder = () => {
-  document.querySelector('.popUp--description').classList.toggle('popUp--description--open');
+  document.querySelector('.open__popUp__sign').classList.toggle('open__popUp__sign--open');
+  if (!popUp__description.classList.contains('popUp__description--open')) {
+    popUp__description.classList.add('popUp__description--grid');
+
+    setTimeout(() => {
+      popUp__description.classList.add('popUp__description--open');
+    }, 1);
+  } else {
+    popUp__description.classList.remove('popUp__description--open');
+    setTimeout(() => {
+      popUp__description.classList.remove('popUp__description--grid');
+    }, 201);
+  }
 };
 
 //-------------------------Filters-------------------------
@@ -219,19 +230,15 @@ const closeFilters = () => {
 
 //-------------------------Loader-------------------------
 const hideLoader = () => {
-  loader.style.zIndex = -1;
-  loader.style.display = 'none';
+  loader.classList.remove('main__loader--show');
 };
 
 const showLoader = () => {
-  loader.style.zIndex = 900;
-  loader.style.display = 'flex';
+  loader.classList.add('main__loader--show');
 };
 
 //--------------------------------------------------
 const generateProducts = (products) => {
-  const divProductsContainer = document.querySelector('.main__container');
-
   hideLoader();
 
   divProductsContainer.innerHTML = '';
@@ -279,6 +286,7 @@ const generateProducts = (products) => {
 const getProducts = (data) => {
   url = './php/get_products.php';
 
+  document.querySelector('.main__container').innerHTML = '';
   showLoader();
 
   fetch(url, {

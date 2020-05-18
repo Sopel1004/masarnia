@@ -28,20 +28,5 @@ body {
 @import 'popUp';
 @import 'filters';
 @import 'descriptionDesktop';
-
-.blur {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background-color: var(--blur);
-  opacity: 0%;
-  transition: opacity 100ms ease-out;
-
-  &--show {
-    z-index: 900;
-    opacity: 90%;
-  }
-}
+@import 'blur';
+@import 'scrollBar';

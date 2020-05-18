@@ -5,7 +5,8 @@
   justify-content: start;
   align-items: center;
   margin-top: 1em;
-  overflow-x: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   position: relative;
 

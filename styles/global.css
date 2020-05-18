@@ -108,7 +108,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 1em;
-  overflow-x: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
   scrollbar-width: none;
   position: relative;
 }
@@ -181,8 +182,9 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: #fff;
+  position: relative;
 }
 
 .main__filterBar {
@@ -330,15 +332,22 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #dadada;
-  opacity: 0.9;
+  background-color: #ffffff;
+  opacity: 1;
   z-index: -1;
   display: none;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.main__loader--show {
+  z-index: 900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .card {
@@ -686,24 +695,34 @@ body {
 .description__desktop {
   width: 100vw;
   max-width: 700px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
+  min-height: 100vh;
   overflow-y: auto;
-  z-index: 1000;
-  background-color: #ffffff;
-  padding: 30px;
-  font-size: 20px;
+  overflow-x: hidden;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: -webkit-transform 200ms ease-in-out;
   transition: -webkit-transform 200ms ease-in-out;
   transition: transform 200ms ease-in-out;
   transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  scroll-behavior: smooth;
 }
 
-.description__desktop .description__back {
+.description__desktop .description__wrapper {
+  width: 100vw;
+  max-width: 700px;
+  padding: 30px;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.description__desktop .description__wrapper .description__back {
   height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -711,7 +730,13 @@ body {
   margin-bottom: 20px;
 }
 
-.description__desktop .description__back > img {
+.description__desktop .description__wrapper .description__back .back_btn {
+  border: 0;
+  height: 100%;
+  background-color: transparent;
+}
+
+.description__desktop .description__wrapper .description__back .back_btn img {
   height: 30px;
   width: 30px;
   cursor: pointer;
@@ -719,24 +744,24 @@ body {
           transform: rotate(180deg);
 }
 
-.description__desktop > .card--desktop {
+.description__desktop .description__wrapper .card--desktop {
   border: none;
 }
 
-.description__desktop > .card--desktop .card__description {
+.description__desktop .description__wrapper .card--desktop .card__description {
   display: block;
   margin-bottom: 10px;
 }
 
-.description__desktop > .card--desktop .card__name {
+.description__desktop .description__wrapper .card--desktop .card__name {
   font-size: 30px;
 }
 
-.description__desktop > .card--desktop .card__more {
+.description__desktop .description__wrapper .card--desktop .card__more {
   display: none;
 }
 
-.description__desktop .open__popUp {
+.description__desktop .description__wrapper .open__popUp {
   height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -747,55 +772,105 @@ body {
   cursor: pointer;
 }
 
-.description__desktop .open__popUp p {
+.description__desktop .description__wrapper .open__popUp .open__popUp__sign {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.description__desktop .description__wrapper .open__popUp .open__popUp__sign:before, .description__desktop .description__wrapper .open__popUp .open__popUp__sign:after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #c71628;
+  border-radius: 2px;
+  -webkit-transform: translateY(calc((20px - 3px) / 2));
+          transform: translateY(calc((20px - 3px) / 2));
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  transition: -webkit-transform 150ms ease-out;
+  transition: transform 150ms ease-out;
+  transition: transform 150ms ease-out, -webkit-transform 150ms ease-out;
+}
+
+.description__desktop .description__wrapper .open__popUp .open__popUp__sign:after {
+  -webkit-transform: translateY(calc((20px - 3px) / 2)) rotate(90deg);
+          transform: translateY(calc((20px - 3px) / 2)) rotate(90deg);
+}
+
+.description__desktop .description__wrapper .open__popUp .open__popUp__sign--open:after {
+  -webkit-transform: translateY(calc((20px - 3px) / 2)) rotate(180deg);
+          transform: translateY(calc((20px - 3px) / 2)) rotate(180deg);
+}
+
+.description__desktop .description__wrapper .open__popUp p {
   margin-left: 10px;
 }
 
-.description__desktop .popUp--description {
+.description__desktop .description__wrapper .popUp__description {
   position: relative;
   width: 100%;
   padding: 0 20px;
   top: 0;
   margin: 0;
+  margin-bottom: 40px;
   border: 0;
   display: none;
   -ms-grid-columns: 1fr 20px 40%;
       grid-template-columns: 1fr 20px 40%;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  transition: all 200ms ease-in-out;
 }
 
-.description__desktop .popUp--description--open {
+.description__desktop .description__wrapper .popUp__description--grid {
   display: -ms-grid;
   display: grid;
 }
 
-.description__desktop .popUp--description > .popUp__container {
+.description__desktop .description__wrapper .popUp__description--open {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.description__desktop .description__wrapper .popUp__description:after, .description__desktop .description__wrapper .popUp__description:before {
+  display: none;
+}
+
+.description__desktop .description__wrapper .popUp__description > .popUp__container {
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
 }
 
-.description__desktop .popUp--description .popUp__or {
+.description__desktop .description__wrapper .popUp__description .popUp__or {
   width: 20px;
   height: 100%;
 }
 
-.description__desktop .popUp--description .popUp__list__element,
-.description__desktop .popUp--description .popUp__contact__info {
+.description__desktop .description__wrapper .popUp__description .popUp__list__element,
+.description__desktop .description__wrapper .popUp__description .popUp__contact__info {
   font-size: 0.9rem;
 }
 
-.description__desktop .popUp--description .popUp__option {
+.description__desktop .description__wrapper .popUp__description .popUp__option {
   height: 60px;
   margin: 0;
 }
 
-.description__desktop .popUp--description .popUp__option .popUp__text {
+.description__desktop .description__wrapper .popUp__description .popUp__option .popUp__text {
   font-size: 1.1rem;
 }
 
-.description__desktop .popUp--description .popUp__contact {
+.description__desktop .description__wrapper .popUp__description .popUp__contact {
   width: 100%;
   height: 200px;
   display: -ms-grid;
@@ -807,7 +882,7 @@ body {
   justify-items: center;
 }
 
-.description__desktop .popUp--description .popUp__contact__info {
+.description__desktop .description__wrapper .popUp__description .popUp__contact__info {
   width: 80%;
   height: 100%;
   display: -webkit-box;
@@ -821,14 +896,9 @@ body {
           align-items: center;
 }
 
-.description__desktop .popUp--description .popUp__contact__info:first-child {
+.description__desktop .description__wrapper .popUp__description .popUp__contact__info:first-child {
   border-right: 0;
   border-bottom: 1px solid #cacaca;
-}
-
-.description__desktop .popUp--description::after,
-.description__desktop .popUp--description::before {
-  display: none;
 }
 
 @media (min-width: 768px) {
@@ -854,4 +924,40 @@ body {
 .blur--show {
   z-index: 900;
   opacity: 90%;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(199, 22, 40, 0.8);
+  background-clip: padding-box;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-top: 0;
+  border-bottom: 0;
+}
+
+::-webkit-scrollbar:horizontal {
+  background-color: transparent;
+  height: 11px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-left: 0;
+  border-right: 0;
+}
+
+::-webkit-scrollbar-button {
+  opacity: 0;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }

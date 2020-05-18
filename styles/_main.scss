@@ -9,8 +9,9 @@
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: #fff;
+  position: relative;
 
   &__filterBar {
     width: 100%;
@@ -106,14 +107,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: #dadada;
-    opacity: 0.9;
+    // width: 100vw;
+    // height: 100vh;
+    background-color: #ffffff;
+    opacity: 1;
     z-index: -1;
     display: none;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+
+    &--show {
+      z-index: 900;
+      display: flex;
+    }
   }
 }
